@@ -13,7 +13,7 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: true
       matrix:
@@ -41,7 +41,7 @@ jobs:
   test:
     name: Test
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: true
       matrix:
@@ -75,7 +75,7 @@ jobs:
     name: Release
     needs: test
     if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     strategy:
       fail-fast: true
       matrix:
@@ -107,7 +107,7 @@ jobs:
     name: Update Docker Hub Readme
     needs: release
     if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout
         uses: actions/checkout@v4
