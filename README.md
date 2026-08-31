@@ -13,7 +13,7 @@ Full-featured Tauri Docker Image based on [Rust][link-rust] non-slim Debian imag
 
 > [!WARNING]  
 > **(\*) tauri-driver is currently in pre-alpha**  
-> Check the [official documentation](https://tauri.app/v1/guides/testing/webdriver/introduction) for more information.
+> Check the [official documentation](https://v2.tauri.app/develop/tests/webdriver/) for more information.
 
 This image is a good base for CIs (builds, unit & e2e tests, etc) as well as for local runs.
 
@@ -215,28 +215,28 @@ Excepted Ubuntu, all those planned distributions are a maybe for now.
 ### Build
 
 ```sh
-DOCKER_CONTAINER_NAME=[DOCKER_TAG] make build
+DOCKER_IMAGE_TAG=[DOCKER_TAG] make build
 ```
 
-Example: `DOCKER_CONTAINER_NAME=debian-bullseye-18 make build`
+Example: `DOCKER_IMAGE_TAG=debian-bullseye-18 make build`
 
 ### Run
 
 ```sh
-DOCKER_CONTAINER_NAME=[DOCKER_TAG] make run
+DOCKER_IMAGE_TAG=[DOCKER_TAG] make run
 ```
 
-Example: `DOCKER_CONTAINER_NAME=debian-bullseye-18 make run`
+Example: `DOCKER_IMAGE_TAG=debian-bullseye-18 make run`
 
 ### Test
 
 You need to have [Node.js][link-nodejs] installed in order to run the tests:
 
 ```sh
-DOCKER_CONTAINER_NAME=[DOCKER_TAG] make test
+DOCKER_IMAGE_TAG=[DOCKER_TAG] make test
 ```
 
-Example: `DOCKER_CONTAINER_NAME=debian-bullseye-18 make test`.
+Example: `DOCKER_IMAGE_TAG=debian-bullseye-18 make test`.
 
 ---
 
